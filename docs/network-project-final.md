@@ -42,7 +42,7 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 |---|---|---|---|---|
 | HQ | 10 | HQ-USER-A | 10.1.10.0/24 | HSRP (SW101 .2 / SW102 .3, VIP .1) |
 | HQ | 20 | HQ-USER-B | 10.1.20.0/24 | HSRP |
-| DC | 50 | SERVER (DNS1/2) | 10.2.50.0/24 | VARP/VRRP (SW201 .2 / SW202 .3, VIP .1) |
+| DC | 50 | SERVER (DNS1/2, DB1) | 10.2.50.0/24 | VARP/VRRP (SW201 .2 / SW202 .3, VIP .1) |
 | BR1 | 10 | BR1-USER | 10.3.10.0/24 | HSRP |
 | BR2 | 10 | BR2-USER | 10.4.10.0/24 | HSRP |
 | 전 사이트 | 100 | MGMT | 10.X.100.0/24 | - |
@@ -87,6 +87,7 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 | SW201/202 Et7-8 | SW-SVR1 / SW-SVR2 (트렁크) |
 | SW-SVR1 Et3 | DNS1 (VLAN50 access) |
 | SW-SVR2 Et3 | DNS2 (VLAN50 access) |
+| SW-SVR2 Et4 | DB1 (VLAN50 access) |
 | **QoS 대상** | R21 Gi0/0,Gi1/0 / R22 Gi0/0,Gi1/0 / R23 Gi0/0,Gi1/0 / R24 Gi0/0,Gi1/0 |
 
 ### BR1 (BR2는 10.3→10.4, ISP 링크 하단 표 참고)
@@ -140,6 +141,7 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 
 ### 접근 통제
 - DC VLAN50(DNS1/2): 각 사이트 → UDP/TCP 53만 허용, 그 외 차단
+- DC VLAN50(DB1): DB 종류 확정 후 허용 포트 추가 (그 전까지 사이트 → DB1 차단 유지)
 
 ## 6. 빌드 순서 (6주, 3인)
 
@@ -154,5 +156,5 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 
 ## 7. 미확정 항목
 - HQ의 DMVPN 스포크 편입 여부 (편입 시 Area 번호 재조정 필요)
-- 개발DB 서버 VLAN50 추가 여부 (현재는 DNS만)
+- DB1 서버: VLAN50 추가 확정 (SW-SVR2 Et4). DB 종류, IP, 허용 포트, 접근 정책은 미확정
 - 스위치(IOU L2/cEOS) QoS 지원 여부 실측

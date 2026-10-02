@@ -528,6 +528,8 @@
         <mxCell id="duAMYzZ9rU4LuE3985PK-215" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="P2" vertex="1">
           <mxGeometry height="30" width="54" x="516" y="1110.5" as="geometry" />
         </mxCell>
+              <mxCell id="duAMYzZ9rU4LuE3985PK-DB1" value="DB1 (VLAN50)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1"><mxGeometry x="650" y="781" width="45" height="55" as="geometry" /></mxCell>
+        <mxCell id="duAMYzZ9rU4LuE3985PK-DB1-link" edge="1" parent="1" source="duAMYzZ9rU4LuE3985PK-5" target="duAMYzZ9rU4LuE3985PK-DB1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;"><mxGeometry relative="1" as="geometry" /></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
