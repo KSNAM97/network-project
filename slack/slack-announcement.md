@@ -32,7 +32,7 @@ DC 서버 VLAN(50)에는 DNS1/2에 더해 DB1을 추가했습니다 (DB 종류·
 6주, "완주"보다 "각자 결과물 하나씩" 우선. 취업활동으로 잠시 손 놓아도 괜찮습니다.
 
 ■ 문서·링크
-- GitHub(private): KSNAM97/network-project
+- GitHub: KSNAM97/network-project
   README.md, docs/network-project-final.md(전체 설계), docs/schedule-3person.md(일정)
 - Jira: KAN 프로젝트 (티켓 목록은 jira/jira-tickets-3person.csv 기준으로 등록)
 #team-network #team-cloud #team-policy #dev-issues
