@@ -28,9 +28,9 @@ Settings → Branches → Add rule → main
 
 예시:
 ```
-NET-14: [Network][vlan-dc-server] DNS1/2 ACL 추가
-NET-21: [Cloud][vlan-hq-user-a] HQ HSRP 설정
-NET-33: [Policy][vlan-br1-user] DMVPN Spoke 구성
+KAN-14: [Network][vlan-dc-server] DNS1/2 ACL 추가
+KAN-21: [Cloud][vlan-hq-user-a] HQ HSRP 설정
+KAN-33: [Policy][vlan-br1-user] DMVPN Spoke 구성
 ```
 
 ### VLAN 태그
@@ -53,7 +53,7 @@ NET-33: [Policy][vlan-br1-user] DMVPN Spoke 구성
 ## Jira 연동
 
 1. Jira 프로젝트 → Apps → **GitHub for Jira** 설치 후 본 레포 연결 (1회 설정)
-2. 커밋 메시지 맨 앞에 Jira 이슈 키(`NET-1` 등)를 정확히 포함해야 자동 연결됩니다.
+2. 커밋 메시지 맨 앞에 Jira 이슈 키(`KAN-1` 등)를 정확히 포함해야 자동 연결됩니다.
 3. CSV Import 후 실제 발급된 이슈 번호를 Jira Board에서 직접 확인하고
    팀에 공지합니다. Import 순서와 실제 번호가 어긋날 수 있습니다.
 4. PR 제목에도 같은 이슈 키를 포함하면 PR-이슈 연결도 됩니다.

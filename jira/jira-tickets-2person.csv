@@ -1,28 +1,28 @@
 Summary,Issue Type,Label,Priority,Description
 [W1] AS/IP/VLAN 설계표 확정,Task,net-cloud;policy,High,network-project-final.md 기준 확정 및 팀 공유
-[W1] GNS3 서버/Jira/Slack/Git 환경 세팅,Task,net-cloud;policy,High,공유 서버 IP 배포, 저장소 초기화
-[W1] 이미지별 RAM 실측(7200/IOU/cEOS),Task,net-cloud,High,cEOS 버전별 피크/상주 메모리, 34대 동시 기동 여부 확정
+[W1] GNS3 서버/Jira/Slack/Git 환경 세팅,Task,net-cloud;policy,High,"공유 서버 IP 배포, 저장소 초기화"
+[W1] 이미지별 RAM 실측(7200/IOU/cEOS),Task,net-cloud,High,"cEOS 버전별 피크/상주 메모리, 34대 동시 기동 여부 확정"
 [W1] DC+HQ+ISP 노드 배치,Task,net-cloud,High,인터페이스 매핑표 기준
 [W1] BR1+BR2 노드 배치,Task,policy;vlan-br1-user;vlan-br2-user,High,인터페이스 매핑표 기준
-[W2] DC VLAN/트렁크(vlan-dc-server, Arista),Task,net-cloud;vlan-dc-server,High,SW201/202/211/212
-[W2] DC VARP + STP 루트 고정,Task,net-cloud;vlan-dc-server,High,SW201 루트, cEOS 교차연결 루프 방지
+"[W2] DC VLAN/트렁크(vlan-dc-server, Arista)",Task,net-cloud;vlan-dc-server,High,SW201/202/211/212
+[W2] DC VARP + STP 루트 고정,Task,net-cloud;vlan-dc-server,High,"SW201 루트, cEOS 교차연결 루프 방지"
 [W2] HQ VLAN/트렁크/HSRP(vlan-hq-user-a/b),Task,net-cloud;vlan-hq-user-a;vlan-hq-user-b,High,SW101/102/110 + R11/R12
-[W2] HQ Po1-3, 사이트 내부 OSPF,Task,net-cloud,Medium,
+"[W2] HQ Po1-3, 사이트 내부 OSPF",Task,net-cloud,Medium,
 [W2] BR1 VLAN/트렁크/HSRP(vlan-br1-user),Task,policy;vlan-br1-user,High,SW1/2/3 + R1/R2
 [W2] BR2 VLAN/트렁크/HSRP(vlan-br2-user),Task,policy;vlan-br2-user,High,SW1/2/3 + R1/R2
-[W3] ISP-1 내부 eBGP 4세션,Task,net-cloud,High,PE-A/P1/P2/PE-B, AS65111-65114
-[W3] ISP-2 내부 eBGP 4세션,Task,net-cloud,High,PE-A/P1/P2/PE-B, AS65121-65124
+[W3] ISP-1 내부 eBGP 4세션,Task,net-cloud,High,"PE-A/P1/P2/PE-B, AS65111-65114"
+[W3] ISP-2 내부 eBGP 4세션,Task,net-cloud,High,"PE-A/P1/P2/PE-B, AS65121-65124"
 [W3] PE 고객 대역 network 광고,Task,net-cloud,High,사이트별 /16 announce
 [W3] DC/HQ-ISP 정적경로+재분배,Task,net-cloud,High,IP SLA/track
 [W3] BR1/BR2-ISP 정적경로+재분배,Task,policy,High,IP SLA/track
 [W3] Private Internet 기본연결+OSPF(프로세스2),Task,net-cloud,High,Area100
-[W4] Private Internet ACL 화이트리스트,Task,net-cloud,High,5개 링크, OSPF/GRE/ESP/UDP500만 허용
-[W4] DMVPN Hub 구성(DC R24),Task,net-cloud,High,mGRE, NHRP, IPsec profile
+[W4] Private Internet ACL 화이트리스트,Task,net-cloud,High,"5개 링크, OSPF/GRE/ESP/UDP500만 허용"
+[W4] DMVPN Hub 구성(DC R24),Task,net-cloud,High,"mGRE, NHRP, IPsec profile"
 [W4] DMVPN Spoke 구성(BR1/BR2),Task,policy;vlan-br1-user;vlan-br2-user,High,Phase3 shortcut
 [W4] DNS1/DNS2 서버 배치 및 검증(vlan-dc-server),Task,net-cloud;vlan-dc-server,Medium,dig 테스트
-[W4] QoS 정책 20개 인터페이스 적용,Task,net-cloud;policy,Medium,PM-LAN-IN/OUT, 병목 실측(DC/HQ 12개, BR 8개)
+[W4] QoS 정책 20개 인터페이스 적용,Task,net-cloud;policy,Medium,"PM-LAN-IN/OUT, 병목 실측(DC/HQ 12개, BR 8개)"
 [W4] DNS 접근 ACL(53 포트),Task,policy,Medium,사이트간 화이트리스트
-[W5] HSRP/VARP Failover 실측,Task,net-cloud;policy,High,전환시간 측정, 면접 대비 핵심
+[W5] HSRP/VARP Failover 실측,Task,net-cloud;policy,High,"전환시간 측정, 면접 대비 핵심"
 [W5] EtherChannel 멤버 다운 실측,Task,net-cloud;policy,Medium,
 [W5] ISP-1 장애시 ISP-2/DMVPN 전환 실측,Task,net-cloud,High,eBGP hold-time 영향 확인
 [W5] DMVPN Hub 장애 실측,Task,net-cloud,High,Private Internet 단일 노드 리스크
