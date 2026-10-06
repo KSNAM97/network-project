@@ -13,7 +13,7 @@
 | 항목 | 내용 |
 | --- | --- |
 | 주제 | HQ / DC / BR1 / BR2 4개 사이트를 ISP 이중화와 DMVPN으로 연결하는 멀티벤더 하이브리드 네트워크 |
-| 장비 구성 | HQ (R11·R12, SW101·SW102·SW110), DC (R21 ~ R24, SW201·SW202·SW211·SW212, SW-SVR1·2, DNS1·2, DB1), BR1·BR2 (R1·R2, SW1 ~ SW3, H1·H2), ISP-1·ISP-2 (PE-A·P1·P2·PE-B 각 4대), Private Internet (PI) |
+| 장비 구성 | HQ (R11·R12, SW101·SW102·SW110), DC (R21 ~ R24, SW201·SW202·SW211·SW212, SW-SVR1·2, DNS1, DB1), BR1·BR2 (R1·R2, SW1 ~ SW3, H1·H2), ISP-1·ISP-2 (PE-A·P1·P2·PE-B 각 4대), Private Internet (PI) |
 | 핵심 기술 | 사이트 OSPF, ISP eBGP(라우터별 개별 AS), 정적 경로 + 재분배(IP SLA/track), DMVPN Phase3, IPsec, HSRP / VARP, EtherChannel, QoS, ACL 화이트리스트 |
 | 시뮬레이터 | GNS3 (Cisco 7200 / IOU, Arista cEOS) |
 | 일정 | 6주 (3인 체제 / 2인 체제 일정 문서 제공) |
@@ -130,7 +130,7 @@ network-project/
 | 사이트 | VLAN | 이름 | 서브넷 | 게이트웨이 이중화 |
 | --- | --- | --- | --- | --- |
 | HQ | 10 / 20 | HQ-USER-A / B | 10.1.10.0/24, 10.1.20.0/24 | HSRP |
-| DC | 50 | SERVER (DNS1·2, DB1) | 10.2.50.0/24 | VARP / VRRP |
+| DC | 50 | SERVER (DNS1, DB1) | 10.2.50.0/24 | VARP / VRRP |
 | BR1 / BR2 | 10 | BR-USER | 10.3.10.0/24, 10.4.10.0/24 | HSRP |
 | 전 사이트 | 100 / 999 | MGMT / NATIVE | 10.X.100.0/24 / IP 없음 | - |
 
@@ -142,12 +142,12 @@ network-project/
 | 클래스 | CONTROL (CS6, 10%) / BUSINESS (DNS 53 → AF31, 30%) / class-default (fair-queue) |
 | 제외 | 라우터 간 링크, ISP 방향, Private Internet 방향, Tunnel0 |
 | Private Internet ACL | OSPF, GRE / ESP / UDP 500 (203.0.113.0/24 간), ICMP(임시)만 허용 후 `deny ip any any log` |
-| DC VLAN 50 | DNS1·2는 각 사이트에서 UDP / TCP 53만 허용, DB1은 DB 종류 확정 후 포트 추가 (그 전까지 차단) |
+| DC VLAN 50 | DNS1은 각 사이트에서 UDP / TCP 53만 허용 (DHCP 허용 포트는 DHCP 설계 확정 후 추가), DB1은 DB 종류 확정 후 포트 추가 (그 전까지 차단) |
 
 ### 미확정 항목
 
 - HQ의 DMVPN 스포크 편입 여부 (편입 시 Area 번호 재조정 필요)
-- DB1 서버: VLAN 50 추가 확정 (SW-SVR2 Et4). DB 종류, IP, 허용 포트, 접근 정책 미확정
+- DC 서버 VLAN 50: DNS1(주 용도 DHCP)과 DB1 두 대로 구성 (DNS 이중화 없음). DB 종류, IP, 허용 포트, DHCP 방식, 접근 정책 미확정
 - 스위치 (IOU L2 / cEOS) QoS 지원 여부 실측
 
 > 브랜치 전략, 커밋 규칙, Jira 연동 → [`CONTRIBUTING.md`](./CONTRIBUTING.md)
