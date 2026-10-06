@@ -4,7 +4,7 @@
 
 | 역할 | 담당 사이트 |
 |---|---|
-| Network | DC, Private Internet, DNS, QoS |
+| Network | DC, Private Internet, DNS·DB, QoS |
 | Cloud | HQ, ISP-1, ISP-2 |
 | Policy | BR1, BR2, DMVPN(Hub+Spoke), 접근통제 ACL |
 
@@ -20,7 +20,7 @@
 | 100 | `vlan-mgmt` | 공통 |
 | 999 | `vlan-native` | 공통 |
 
-커밋 형식: `[역할][vlan-태그] 내용` 예) `[Network][vlan-dc-server] DNS1/2 ACL 추가`
+커밋 형식: `[역할][vlan-태그] 내용` 예) `[Network][vlan-dc-server] DNS1 ACL 추가`
 
 ## 일별 목표
 
@@ -42,8 +42,8 @@
 | | 목 | DC↔ISP 정적경로+재분배 | HQ↔ISP 정적경로+재분배 | 〃 |
 | | 금 | 전 사이트 상호 도달 확인 | 〃 | 〃 |
 | W4 | 월 | DMVPN Hub(R24) crypto | ISP 경로 필터 정리 | DMVPN Spoke(BR1) |
-| | 화 | DNS1/2 배치 | OSPF↔BGP 재분배 점검 | DMVPN Spoke(BR2) |
-| | 수 | DNS 검증(dig) | - | Phase3 shortcut 검증 |
+| | 화 | DNS1·DB1 배치 | OSPF↔BGP 재분배 점검 | DMVPN Spoke(BR2) |
+| | 수 | DNS 검증(dig), DHCP 확인 | - | Phase3 shortcut 검증 |
 | | 목 | QoS 20포트 중 DC 4대 | QoS 20포트 중 HQ 2대 | QoS 20포트 중 BR 4대 |
 | | 금 | 접근통제 ACL, 통합 테스트 | 〃 | 〃 |
 | W5 | 월 | HSRP/VARP 전환 실측 | 〃 | 〃 |

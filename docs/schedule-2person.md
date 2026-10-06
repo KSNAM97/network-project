@@ -4,7 +4,7 @@
 
 | 역할 | 담당 사이트 |
 |---|---|
-| Network+Cloud (통합) | DC, HQ, ISP-1, ISP-2, Private Internet, DNS, QoS |
+| Network+Cloud (통합) | DC, HQ, ISP-1, ISP-2, Private Internet, DNS·DB, QoS |
 | Policy | BR1, BR2, DMVPN(Hub+Spoke), 접근통제 ACL |
 
 ⚠️ 통합 담당자 업무량이 전체의 약 75%(24개 티켓 중 18개)를 차지합니다.
@@ -43,7 +43,7 @@ BR1/BR2 중 하나를 Policy로 넘기는 재배분안을 권장하며, 본 일�
 | | 금 | PI 기본연결+OSPF(프로세스2) | 전 사이트 상호도달 확인 |
 | W4 | 월 | PI ACL 화이트리스트 | DMVPN Spoke(BR1) |
 | | 화 | DMVPN Hub(R24) crypto | DMVPN Spoke(BR2) |
-| | 수 | DNS1/2 배치+검증 | Phase3 shortcut 검증 |
+| | 수 | DNS1·DB1 배치+검증 | Phase3 shortcut 검증 |
 | | 목 | QoS 20포트 중 DC/HQ 12대 | QoS 20포트 중 BR 8대 |
 | | 금 | 접근통제 ACL, 통합 테스트 | 〃 |
 | W5 | 월~화 | HSRP/VARP, EtherChannel 실측 | 〃 |
@@ -56,4 +56,4 @@ BR1/BR2 중 하나를 Policy로 넘기는 재배분안을 권장하며, 본 일�
 
 ## 3인 대비 리스크
 - W3~W4에 통합 담당자 업무가 몰려 있어 지연 시 가장 먼저 영향받는 구간입니다.
-- 지연 발생 시 컷 순서: ① QoS 스위치 검증 생략(라우터만) ② DNS 이중화→단일 서버 ③ ISP-2 생략, ISP-1+DMVPN만
+- 지연 발생 시 컷 순서: ① QoS 스위치 검증 생략(라우터만) ② ISP-2 생략, ISP-1+DMVPN만

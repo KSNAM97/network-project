@@ -19,7 +19,7 @@ Summary,Issue Type,Label,Priority,Description
 [W4] Private Internet ACL 화이트리스트,Task,net-cloud,High,"5개 링크, OSPF/GRE/ESP/UDP500만 허용"
 [W4] DMVPN Hub 구성(DC R24),Task,net-cloud,High,"mGRE, NHRP, IPsec profile"
 [W4] DMVPN Spoke 구성(BR1/BR2),Task,policy;vlan-br1-user;vlan-br2-user,High,Phase3 shortcut
-[W4] DNS1/DNS2 서버 배치 및 검증(vlan-dc-server),Task,net-cloud;vlan-dc-server,Medium,dig 테스트
+[W4] DNS1(DHCP 겸용)·DB1 서버 배치 및 검증(vlan-dc-server),Task,net-cloud;vlan-dc-server,Medium,dig·DHCP 할당 테스트
 [W4] QoS 정책 20개 인터페이스 적용,Task,net-cloud;policy,Medium,"PM-LAN-IN/OUT, 병목 실측(DC/HQ 12개, BR 8개)"
 [W4] DNS 접근 ACL(53 포트),Task,policy,Medium,사이트간 화이트리스트
 [W5] HSRP/VARP Failover 실측,Task,net-cloud;policy,High,"전환시간 측정, 면접 대비 핵심"
