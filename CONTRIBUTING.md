@@ -28,7 +28,7 @@ Settings → Branches → Add rule → main
 
 예시:
 ```
-KAN-14: [Network][vlan-dc-server] DNS1/2 ACL 추가
+KAN-14: [Network][vlan-dc-server] DNS1 ACL 추가
 KAN-21: [Cloud][vlan-hq-user-a] HQ HSRP 설정
 KAN-33: [Policy][vlan-br1-user] DMVPN Spoke 구성
 ```

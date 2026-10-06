@@ -6,7 +6,7 @@ ISP-1 · ISP-2는 라우터별 개별 AS의 eBGP 전용 (PE-A/P1/P2/PE-B, 마름
 사이트↔ISP는 정적경로+재분배, DC↔BR1/BR2는 DMVPN Phase3(mGRE over IPsec)으로
 Private Internet(203.0.113.0/24) 경유. Private Internet에는 화이트리스트 ACL 적용.
 DC 내부 스위치 6대(L3 4대 + 서버용 L2 2대)만 Arista cEOS, 나머지는 전부 Cisco.
-DC 서버 VLAN(50)에는 DNS1/2에 더해 DB1을 추가했습니다 (DB 종류·접근 포트는 미확정).
+DC 서버 VLAN(50)은 DNS1(주 용도 DHCP)과 DB1 두 대로 구성합니다 (DB 종류·DHCP 방식·접근 포트는 미확정).
 
 ■ 역할 분담
 - Network(본인): DC 전체, Private Internet, DNS/DB 서버, QoS
@@ -14,12 +14,12 @@ DC 서버 VLAN(50)에는 DNS1/2에 더해 DB1을 추가했습니다 (DB 종류·
 - Policy: BR1, BR2, DMVPN Spoke+IPsec, ACL/컨벤션/문서
 
 ■ 컨벤션
-- VLAN: 10=HQ-USER-A, 20=HQ-USER-B, 50=DC-SERVER(DNS1/2, DB1), 100=MGMT, 999=NATIVE
+- VLAN: 10=HQ-USER-A, 20=HQ-USER-B, 50=DC-SERVER(DNS1, DB1), 100=MGMT, 999=NATIVE
   (BR1·BR2는 각 VLAN 10)
 - 인터페이스/IP 매핑은 docs/network-project-final.md 참고, 실제 케이블링과 반드시 대조
 - 브랜치: feature/<역할>-<내용>, PR 후 Policy 담당 승인을 받아 main에 merge
 - 커밋 메시지: <Jira키>: [역할][VLAN태그] 내용
-  예) KAN-14: [Network][vlan-dc-server] DNS1/2 ACL 추가
+  예) KAN-14: [Network][vlan-dc-server] DNS1 ACL 추가
   Jira 프로젝트 키는 KAN이고, 커밋 맨 앞에 키를 적으면 이슈에 자동 연결됩니다.
 - 컨피그 파일: configs/<사이트>/<장비명>.cfg 로 저장
   변경 전에 장비에서 copy running-config flash:<장비명>-backup-<날짜>.cfg 로 백업

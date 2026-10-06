@@ -8,7 +8,7 @@
 - README.md: 구조, 단계, 설계 요약 / docs/: 전체 설계와 일정
 - 컨피그 저장: configs/<사이트>/<장비명>.cfg
 - 브랜치: feature/<역할>-<내용>, PR 후 Policy 담당 승인을 받아 main에 merge
-- 설계 반영: DC 서버 VLAN(50)에 DB1 서버 추가 (DB 종류·접근 포트는 미확정)
+- 설계 반영: DC 서버 VLAN(50)은 DNS1(주 용도 DHCP)과 DB1 두 대로 구성 (DB 종류·DHCP 방식·접근 포트는 미확정)
 
 ■ 2. Jira
 - 프로젝트 키: KAN, 이슈 29개 등록 (KAN-4 ~ KAN-32)
@@ -18,7 +18,7 @@
 
 ■ 3. 커밋 규칙
 - 형식: KAN-번호: [역할][VLAN태그] 내용
-- 예: KAN-14: [Network][vlan-dc-server] DNS1/2 ACL 추가
+- 예: KAN-14: [Network][vlan-dc-server] DNS1 ACL 추가
 - 맨 앞에 이슈 키를 쓰면 Jira 이슈에 자동 연결됩니다.
 - 변경 전에는 장비에서 copy running-config flash:<장비명>-backup-<날짜>.cfg 로 백업해 주세요.
 
