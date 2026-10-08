@@ -48,6 +48,32 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 | 전 사이트 | 100 | MGMT | 10.X.100.0/24 | - |
 | 전 사이트 | 999 | NATIVE | IP 없음 | 모든 트렁크 native |
 
+## 3-1. GNS3 장비명 대응표
+
+GNS3에 입력한 장비명과 이 문서의 설계 장비명을 맞춘 표입니다. 이 문서의 인터페이스·IP 표는 설계 장비명 기준이고, 컨피그 파일(`configs/<사이트>/<장비명>.cfg`)과 장비 hostname은 GNS3 장비명을 따릅니다. `확인 필요` 표시는 도면 배치로 맞춘 값이라 케이블링과 대조해 확정합니다.
+
+| 사이트 | GNS3 장비명 | 설계 장비명 | 역할 | 비고 |
+|---|---|---|---|---|
+| Private Internet | PrivI-net | PI | DMVPN 언더레이 | |
+| HQ | HQ-R1 / HQ-R2 | R11 / R12 | 라우터 | |
+| HQ | HQ-SW-1 | SW110 | L3 스위치 | 확인 필요 |
+| HQ | HQ-SW-2 / HQ-SW-3 | SW101 / SW102 | L3 스위치(HSRP) | 확인 필요 |
+| DC | DC-R1 / DC-R2 | R23 / R24 | 라우터(PI 연결) | R24가 DMVPN Hub, 확인 필요 |
+| DC | DC-R3 / DC-R4 | R21 / R22 | 라우터(ISP 연결) | 확인 필요 |
+| DC | DC-SW1-L3 / DC-SW2-L3 | SW211 / SW212 | L3 스위치(Arista cEOS) | 확인 필요 |
+| DC | DC-SW3-L3 / DC-SW4-L3 | SW201 / SW202 | L3 스위치(Arista cEOS, VARP) | 확인 필요 |
+| DC | DC-SW1-L2 / DC-SW2-L2 | SW-SVR1 / SW-SVR2 | 서버용 L2 스위치(Arista cEOS) | 확인 필요 |
+| DC | (GNS3에 없음) | DNS1 / DB1 | 서버(VLAN50) | 노드 생성 필요 |
+| ISP-1 | ISP-1-PE-A / ISP-1-P1 / ISP-1-P2 / ISP-1-PE-B | PE-A / P1 / P2 / PE-B | eBGP | |
+| ISP-2 | ISP-2-PE-A / ISP-2-P1 / ISP-2-P2 / ISP-2-PE-B | PE-A / P1 / P2 / PE-B | eBGP | |
+| BR1 | BR1-R1 / BR1-R2 | R1 / R2 | 라우터(R1이 DMVPN Spoke) | |
+| BR1 | BR1-SW1-L3 / BR1-SW2-L3 / BR1-SW3-L3 | SW1 / SW2 / SW3 | 스위치(SW3은 호스트 연결) | |
+| BR1 | (GNS3에 없음) | H1 / H2 | 호스트 | 노드 생성 필요 |
+| BR2 | BR2-R1 / BR2-R2 | R1 / R2 | 라우터(R2가 DMVPN Spoke) | |
+| BR2 | BR2-SW1-L3 / BR2-SW2-L3 | SW1 / SW2 | L3 스위치 | 확인 필요 |
+| BR2 | BR2-SW1-L2 | SW3 | 호스트 연결 L2 스위치 | 확인 필요 |
+| BR2 | (GNS3에 없음) | H1 / H2 | 호스트 | 노드 생성 필요 |
+
 ## 4. 인터페이스 · 포트 매핑 (제안값 — 실제 케이블링과 대조 필요)
 
 ### HQ
