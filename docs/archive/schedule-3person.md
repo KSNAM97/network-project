@@ -1,4 +1,6 @@
-# 일정 — 3인 체제 (Network / Cloud / Policy)
+# 일정 — 3인 체제 (Network / Cloud / Policy) — 보관본
+
+> 2인 체제(Net-Cloud / Policy)가 확정되어 더 이상 사용하지 않는 계획입니다. 현재 일정은 [`../schedule-2person.md`](../schedule-2person.md)를 참고하세요.
 
 ## 역할 분담
 
