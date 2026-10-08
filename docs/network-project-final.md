@@ -81,17 +81,17 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 ### HQ
 | A | B | 서브넷/용도 |
 |---|---|---|
-| HQ-SW-2 e1/0 | HQ-R1 Gi0/0 | 10.1.0.0/30 |
-| HQ-SW-2 e1/1 | HQ-R2 Gi0/0 | 10.1.0.4/30 |
-| HQ-SW-3 e1/0 | HQ-R1 Gi1/0 | 10.1.0.8/30 |
-| HQ-SW-3 e1/1 | HQ-R2 Gi1/0 | 10.1.0.12/30 |
+| HQ-SW-2 Gi1/0 | HQ-R1 Gi0/0 | 10.1.0.0/30 |
+| HQ-SW-2 Gi1/1 | HQ-R2 Gi0/0 | 10.1.0.4/30 |
+| HQ-SW-3 Gi1/0 | HQ-R1 Gi1/0 | 10.1.0.8/30 |
+| HQ-SW-3 Gi1/1 | HQ-R2 Gi1/0 | 10.1.0.12/30 |
 | HQ-R1 Gi2/0 | HQ-R2 Gi2/0 | 10.1.0.16/30 |
 | HQ-R1 Gi3/0 | ISP-1-PE-A Gi2/0 | 100.1.11.0/30 |
 | HQ-R2 Gi3/0 | ISP-2-PE-A Gi2/0 | 100.2.12.0/30 |
 | HQ-R2 Gi4/0 | PrivI-net Gi2/0 | 203.0.113.8/30 |
-| HQ-SW-1 e1/0-1 | HQ-SW-2 e0/0-1 (Po1, VLAN10/20/100) |
-| HQ-SW-1 e1/2-3 | HQ-SW-3 e0/0-1 (Po2) |
-| HQ-SW-2 e0/2-3 | HQ-SW-3 e0/2-3 (Po3) |
+| HQ-SW-1 Gi1/0-1 | HQ-SW-2 Gi0/0-1 (Po1, VLAN10/20/100) |
+| HQ-SW-1 Gi1/2-3 | HQ-SW-3 Gi0/0-1 (Po2) |
+| HQ-SW-2 Gi0/2-3 | HQ-SW-3 Gi0/2-3 (Po3) |
 | **QoS 대상** | HQ-R1 Gi0/0, Gi1/0 / HQ-R2 Gi0/0, Gi1/0 |
 
 ### DC
@@ -120,13 +120,13 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 ### BR1 (BR2는 10.3→10.4, 장비명 BR2-*, ISP 링크 하단 표 참고)
 | A | B | 서브넷/용도 |
 |---|---|---|
-| BR1-SW1-L3 e0/0-1 | BR1-R1 Gi0/0 / BR1-R2 Gi0/0 |
-| BR1-SW2-L3 e0/0-1 | BR1-R1 Gi1/0 / BR1-R2 Gi1/0 |
+| BR1-SW1-L3 Gi0/0-1 | BR1-R1 Gi0/0 / BR1-R2 Gi0/0 |
+| BR1-SW2-L3 Gi0/0-1 | BR1-R1 Gi1/0 / BR1-R2 Gi1/0 |
 | BR1-R1 Gi2/0 | BR1-R2 Gi2/0 | 10.3.0.16/30 |
 | BR1-R1 Gi3/0 | ISP-1-PE-B Gi2/0 | 100.1.31.0/30 |
 | BR1-R2 Gi3/0 | ISP-2-PE-B Gi2/0 | 100.2.32.0/30 |
 | BR1-R1 Gi4/0 | PrivI-net Gi3/0 | 203.0.113.12/30 (Tunnel0 source, DMVPN Spoke) |
-| BR1-SW1-L3 e1/0-1 | BR1-SW2-L3 e1/0-1 (Po1, VLAN10/100) |
+| BR1-SW1-L3 Gi1/0-1 | BR1-SW2-L3 Gi1/0-1 (Po1, VLAN10/100) |
 | BR1-SW1-L3/BR1-SW2-L3 → BR1-SW3-L3 | 트렁크 |
 | H1/H2 | BR1-SW3-L3 (VLAN10 access) |
 | **QoS 대상** | BR1-R1 Gi0/0,Gi1/0 / BR1-R2 Gi0/0,Gi1/0 |
