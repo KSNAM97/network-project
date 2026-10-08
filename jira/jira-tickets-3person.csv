@@ -3,12 +3,12 @@ Summary,Issue Type,Label,Priority,Description
 [W1] GNS3 서버/Jira/Slack/Git 환경 세팅,Task,network;cloud;policy,High,"공유 서버 IP 배포, 저장소 초기화"
 [W1] 이미지별 RAM 실측(7200/IOU/cEOS),Task,network,High,"cEOS 버전별 피크/상주 메모리, 34대 동시 기동 여부 확정"
 [W1] 전체 노드 배치 및 기본 링크 연결,Task,network;cloud;policy,High,인터페이스 매핑표 기준
-[W2] HQ VLAN/트렁크(vlan-hq-user-a/b),Task,cloud;vlan-hq-user-a;vlan-hq-user-b,High,SW101/102/110
-[W2] HQ HSRP + Po1-3,Task,cloud;vlan-hq-user-a,High,R11/R12 게이트웨이 이중화
-"[W2] DC VLAN/트렁크(vlan-dc-server, Arista)",Task,network;vlan-dc-server,High,SW201/202/211/212
-[W2] DC VARP + STP 루트 고정,Task,network;vlan-dc-server,High,"SW201 루트, cEOS 교차연결 루프 방지"
-[W2] BR1 VLAN/트렁크/HSRP(vlan-br1-user),Task,policy;vlan-br1-user,High,SW1/2/3 + R1/R2
-[W2] BR2 VLAN/트렁크/HSRP(vlan-br2-user),Task,policy;vlan-br2-user,High,SW1/2/3 + R1/R2
+[W2] HQ VLAN/트렁크(vlan-hq-user-a/b),Task,cloud;vlan-hq-user-a;vlan-hq-user-b,High,HQ-SW-1~3
+[W2] HQ HSRP + Po1-3,Task,cloud;vlan-hq-user-a,High,HQ-R1/HQ-R2 게이트웨이 이중화
+"[W2] DC VLAN/트렁크(vlan-dc-server, Arista)",Task,network;vlan-dc-server,High,DC-SW1~4-L3
+[W2] DC VARP + STP 루트 고정,Task,network;vlan-dc-server,High,"DC-SW3-L3 루트, cEOS 교차연결 루프 방지"
+[W2] BR1 VLAN/트렁크/HSRP(vlan-br1-user),Task,policy;vlan-br1-user,High,BR1-SW1~3-L3 + BR1-R1/R2
+[W2] BR2 VLAN/트렁크/HSRP(vlan-br2-user),Task,policy;vlan-br2-user,High,BR2-SW1-L3/SW2-L3/SW1-L2 + BR2-R1/R2
 [W2] 사이트 내부 OSPF(Area10/20/30) 확정,Task,network;cloud;policy,Medium,ABR 이중화 확인
 [W3] ISP-1 내부 eBGP 4세션,Task,cloud,High,"PE-A/P1/P2/PE-B, AS65111-65114"
 [W3] ISP-2 내부 eBGP 4세션,Task,cloud,High,"PE-A/P1/P2/PE-B, AS65121-65124"
@@ -16,7 +16,7 @@ Summary,Issue Type,Label,Priority,Description
 [W3] 사이트-ISP 정적경로 + track,Task,network;cloud;policy,High,"IP SLA/track, OSPF redistribute static"
 [W3] Private Internet ACL 화이트리스트,Task,network,High,"5개 링크, OSPF/GRE/ESP/UDP500만 허용"
 [W3] Private Internet OSPF(프로세스2) 구성,Task,network,High,"Area100, 언더레이 전용"
-[W4] DMVPN Hub 구성(DC R24),Task,network,High,"mGRE, NHRP, IPsec profile"
+[W4] DMVPN Hub 구성(DC-R2),Task,network,High,"mGRE, NHRP, IPsec profile"
 [W4] DMVPN Spoke 구성(BR1 R1),Task,policy;vlan-br1-user,High,Phase3 shortcut
 [W4] DMVPN Spoke 구성(BR2 R2),Task,policy;vlan-br2-user,High,Phase3 shortcut
 [W4] DNS1(DHCP 겸용)·DB1 서버 배치 및 검증(vlan-dc-server),Task,network;vlan-dc-server,Medium,dig·DHCP 할당 테스트

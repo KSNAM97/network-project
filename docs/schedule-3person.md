@@ -41,7 +41,7 @@
 | | 수 | PI ACL 화이트리스트 | PE 고객 대역 광고 | track/IP SLA |
 | | 목 | DC↔ISP 정적경로+재분배 | HQ↔ISP 정적경로+재분배 | 〃 |
 | | 금 | 전 사이트 상호 도달 확인 | 〃 | 〃 |
-| W4 | 월 | DMVPN Hub(R24) crypto | ISP 경로 필터 정리 | DMVPN Spoke(BR1) |
+| W4 | 월 | DMVPN Hub(DC-R2) crypto | ISP 경로 필터 정리 | DMVPN Spoke(BR1) |
 | | 화 | DNS1·DB1 배치 | OSPF↔BGP 재분배 점검 | DMVPN Spoke(BR2) |
 | | 수 | DNS 검증(dig), DHCP 확인 | - | Phase3 shortcut 검증 |
 | | 목 | QoS 20포트 중 DC 4대 | QoS 20포트 중 HQ 2대 | QoS 20포트 중 BR 4대 |

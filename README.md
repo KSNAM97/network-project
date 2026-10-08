@@ -13,7 +13,7 @@
 | 항목 | 내용 |
 | --- | --- |
 | 주제 | HQ / DC / BR1 / BR2 4개 사이트를 ISP 이중화와 DMVPN으로 연결하는 멀티벤더 하이브리드 네트워크 |
-| 장비 구성 | HQ (R11·R12, SW101·SW102·SW110), DC (R21 ~ R24, SW201·SW202·SW211·SW212, SW-SVR1·2, DNS1, DB1), BR1·BR2 (R1·R2, SW1 ~ SW3, H1·H2), ISP-1·ISP-2 (PE-A·P1·P2·PE-B 각 4대), Private Internet (PI) |
+| 장비 구성 | HQ (HQ-R1·HQ-R2, HQ-SW-1 ~ HQ-SW-3), DC (DC-R1 ~ DC-R4, DC-SW1 ~ DC-SW4-L3, DC-SW1·2-L2, DNS1, DB1), BR1 (BR1-R1·R2, BR1-SW1 ~ SW3-L3), BR2 (BR2-R1·R2, BR2-SW1·SW2-L3, BR2-SW1-L2), 호스트 H1·H2, ISP-1·ISP-2 (ISP-n-PE-A·P1·P2·PE-B 각 4대), Private Internet (PrivI-net) |
 | 핵심 기술 | 사이트 OSPF, ISP eBGP(라우터별 개별 AS), 정적 경로 + 재분배(IP SLA/track), DMVPN Phase3, IPsec, HSRP / VARP, EtherChannel, QoS, ACL 화이트리스트 |
 | 시뮬레이터 | GNS3 (Cisco 7200 / IOU, Arista cEOS) |
 | 일정 | 6주 (3인 체제 / 2인 체제 일정 문서 제공) |
@@ -101,7 +101,7 @@ network-project/
 | 사이트 | AS | 대역 | 비고 |
 | --- | --- | --- | --- |
 | HQ | 65001 | 10.1.0.0/16 | OSPF 프로세스1 Area 0 |
-| DC | 65002 | 10.2.0.0/16 | OSPF 프로세스1 Area 10, DMVPN Hub (R24) |
+| DC | 65002 | 10.2.0.0/16 | OSPF 프로세스1 Area 10, DMVPN Hub (DC-R2) |
 | BR1 | 65003 | 10.3.0.0/16 | OSPF 프로세스1 Area 20, DMVPN Spoke (R1) |
 | BR2 | 65004 | 10.4.0.0/16 | OSPF 프로세스1 Area 30, DMVPN Spoke (R2) |
 | ISP-1 | 65111 ~ 65114 | 100.1.0.0/16 | eBGP 전용 (PE-A / P1 / P2 / PE-B 개별 AS) |
@@ -121,7 +121,7 @@ network-project/
 
 | 장비 | Tunnel0 | NBMA (source) | 역할 |
 | --- | --- | --- | --- |
-| DC R24 | 172.16.0.1/24 | 203.0.113.5 | Hub, priority 255, mGRE over IPsec |
+| DC-R2 | 172.16.0.1/24 | 203.0.113.5 | Hub, priority 255, mGRE over IPsec |
 | BR1 R1 | 172.16.0.11/24 | 203.0.113.13 | Spoke, priority 0, shortcut |
 | BR2 R2 | 172.16.0.12/24 | 203.0.113.17 | Spoke, priority 0, shortcut |
 

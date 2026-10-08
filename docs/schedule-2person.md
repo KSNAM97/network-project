@@ -42,7 +42,7 @@ BR1/BR2 중 하나를 Policy로 넘기는 재배분안을 권장하며, 본 일�
 | | 목 | DC/HQ↔ISP 정적경로+재분배 | 〃 |
 | | 금 | PI 기본연결+OSPF(프로세스2) | 전 사이트 상호도달 확인 |
 | W4 | 월 | PI ACL 화이트리스트 | DMVPN Spoke(BR1) |
-| | 화 | DMVPN Hub(R24) crypto | DMVPN Spoke(BR2) |
+| | 화 | DMVPN Hub(DC-R2) crypto | DMVPN Spoke(BR2) |
 | | 수 | DNS1·DB1 배치+검증 | Phase3 shortcut 검증 |
 | | 목 | QoS 20포트 중 DC/HQ 12대 | QoS 20포트 중 BR 8대 |
 | | 금 | 접근통제 ACL, 통합 테스트 | 〃 |
