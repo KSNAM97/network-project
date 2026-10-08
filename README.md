@@ -54,6 +54,7 @@ network-project/
 │   └── private-internet/
 ├── docs/
 │   ├── network-project-final.md
+│   ├── port-mapping.md
 │   ├── schedule-2person.md
 │   └── archive/
 │       └── schedule-3person.md   (2인 체제 확정 전 계획, 보관)

@@ -76,6 +76,8 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 
 ## 4. 인터페이스 · 포트 매핑 (제안값 — 실제 케이블링과 대조 필요)
 
+링크 단위로 풀어 쓴 전체 표는 [`docs/port-mapping.md`](./port-mapping.md)를 참고하세요.
+
 ### HQ
 | A | B | 서브넷/용도 |
 |---|---|---|
