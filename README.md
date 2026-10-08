@@ -58,7 +58,7 @@ network-project/
 │   └── archive/
 │       └── schedule-3person.md   (2인 체제 확정 전 계획, 보관)
 ├── jira/
-│   ├── jira-tickets-3person.csv   (현재 Jira KAN 이슈 29개의 등록 기준, 마감일 포함)
+│   ├── jira-tickets-3person.csv   (현재 Jira KAN 이슈 29개의 등록 기준, 라벨 net-cloud / policy, 마감일 포함)
 │   └── jira-tickets-2person.csv   (2인 체제 라벨 net-cloud 기준 참고안)
 ├── slack/
 │   └── slack-announcement.md
