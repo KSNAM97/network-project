@@ -12,7 +12,7 @@
 
 ■ 2. Jira
 - 프로젝트 키: KAN, 이슈 29개 등록 (KAN-4 ~ KAN-32)
-- 제목 앞 [W1]~[W6]은 주차, 라벨 network / cloud / policy는 담당 역할입니다.
+- 제목 앞 [W1]~[W6]은 주차, 라벨 net-cloud / policy는 담당 역할입니다(기존 이슈는 network, cloud 라벨도 Net-Cloud로 봅니다).
 - 보드 컬럼: 해야 할 일 → 진행 중 → 완료 (시작할 때 진행 중, 끝나면 완료로 옮겨 주세요)
 - 번호가 KAN-4부터 시작하는 것은 Jira 특성이며 작업에는 영향이 없습니다.
 
@@ -23,7 +23,7 @@
 - 변경 전에는 장비에서 copy running-config flash:<장비명>-backup-<날짜>.cfg 로 백업해 주세요.
 
 ■ 4. Slack
-- 채널: #announcements(공지), #team-network, #team-cloud, #team-policy, #dev-issues(장애·이슈 공유)
+- 채널: #announcements(공지), #team-net-cloud, #team-policy, #dev-issues(장애·이슈 공유)
 - Jira 알림: 팀 채널에는 자기 팀 라벨의 이슈만 알림이 옵니다. (생성, 진행 중, 완료로 상태가 바뀔 때)
 - #dev-issues는 Jira 알림을 연결하지 않았습니다.
 

@@ -47,8 +47,8 @@ KAN-33: [Policy][vlan-br1-user] DMVPN Spoke 구성
 
 ### 역할 라벨
 
-3인 체제: `Network` / `Cloud` / `Policy`
-2인 체제: `Net-Cloud` / `Policy`
+2인 체제(확정): `Net-Cloud` / `Policy`
+3인 체제(참고용 보관): `Network` / `Cloud` / `Policy`
 
 ## Jira 연동
 

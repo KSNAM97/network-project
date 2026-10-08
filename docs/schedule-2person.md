@@ -1,11 +1,11 @@
-# 일정 — 2인 체제 (Network+Cloud 통합 / Policy)
+# 일정 — 2인 체제 확정 (Net-Cloud 통합 / Policy)
 
 ## 역할 분담
 
-| 역할 | 담당 사이트 |
-|---|---|
-| Network+Cloud (통합) | DC, HQ, ISP-1, ISP-2, Private Internet, DNS·DB, QoS |
-| Policy | BR1, BR2, DMVPN(Hub+Spoke), 접근통제 ACL |
+| 역할 | 담당자 | 담당 사이트 |
+|---|---|---|
+| Net-Cloud (통합) | 남기석 | DC, HQ, ISP-1, ISP-2, Private Internet, DNS·DB, QoS |
+| Policy | 남인탁 | BR1, BR2, DMVPN(Hub+Spoke), 접근통제 ACL |
 
 ⚠️ 통합 담당자 업무량이 전체의 약 75%(24개 티켓 중 18개)를 차지합니다.
 BR1/BR2 중 하나를 Policy로 넘기는 재배분안을 권장하며, 본 일정은 재배분 적용 기준입니다.

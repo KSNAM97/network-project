@@ -9,9 +9,8 @@ DC 내부 스위치 6대(L3 4대 + 서버용 L2 2대)만 Arista cEOS, 나머지�
 DC 서버 VLAN(50)은 DNS1(주 용도 DHCP)과 DB1 두 대로 구성합니다 (DB 종류·DHCP 방식·접근 포트는 미확정).
 
 ■ 역할 분담
-- Network(본인): DC 전체, Private Internet, DNS/DB 서버, QoS
-- Cloud: HQ, ISP-1, ISP-2 (eBGP 8세션, 정적경로+track)
-- Policy: BR1, BR2, DMVPN Spoke+IPsec, ACL/컨벤션/문서
+- Net-Cloud(남기석): DC 전체, HQ, ISP-1, ISP-2 (eBGP 8세션, 정적경로+track), Private Internet, DNS/DB 서버, QoS
+- Policy(남인탁): BR1, BR2, DMVPN Spoke+IPsec, ACL/컨벤션/문서
 
 ■ 컨벤션
 - VLAN: 10=HQ-USER-A, 20=HQ-USER-B, 50=DC-SERVER(DNS1, DB1), 100=MGMT, 999=NATIVE
@@ -33,6 +32,6 @@ DC 서버 VLAN(50)은 DNS1(주 용도 DHCP)과 DB1 두 대로 구성합니다 (D
 
 ■ 문서·링크
 - GitHub: KSNAM97/network-project
-  README.md, docs/network-project-final.md(전체 설계), docs/schedule-3person.md(일정)
+  README.md, docs/network-project-final.md(전체 설계), docs/schedule-2person.md(일정)
 - Jira: KAN 프로젝트 (티켓 목록은 jira/jira-tickets-3person.csv 기준으로 등록)
-#team-network #team-cloud #team-policy #dev-issues
+#team-net-cloud #team-policy #dev-issues

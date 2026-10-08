@@ -168,7 +168,7 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 - DC VLAN50(DNS1): 각 사이트 → UDP/TCP 53만 허용, 그 외 차단 (DHCP 허용 포트는 DHCP 설계 확정 후 추가)
 - DC VLAN50(DB1): DB 종류 확정 후 허용 포트 추가 (그 전까지 사이트 → DB1 차단 유지)
 
-## 6. 빌드 순서 (6주, 3인)
+## 6. 빌드 순서 (6주, 2인 체제 확정)
 
 | 주차 | 내용 |
 |---|---|
