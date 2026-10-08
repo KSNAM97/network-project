@@ -8,7 +8,7 @@ Summary,Issue Type,Label,Priority,Description
 "[W2] DC VLAN/트렁크(vlan-dc-server, Arista)",Task,network;vlan-dc-server,High,DC-SW1~4-L3
 [W2] DC VARP + STP 루트 고정,Task,network;vlan-dc-server,High,"DC-SW3-L3 루트, cEOS 교차연결 루프 방지"
 [W2] BR1 VLAN/트렁크/HSRP(vlan-br1-user),Task,policy;vlan-br1-user,High,BR1-SW1~3-L3 + BR1-R1/R2
-[W2] BR2 VLAN/트렁크/HSRP(vlan-br2-user),Task,policy;vlan-br2-user,High,BR2-SW1-L3/SW2-L3/SW1-L2 + BR2-R1/R2
+[W2] BR2 VLAN/트렁크/HSRP(vlan-br2-user),Task,policy;vlan-br2-user,High,BR2-SW1-L3/SW2-L3/SW3-L2 + BR2-R1/R2
 [W2] 사이트 내부 OSPF(Area10/20/30) 확정,Task,network;cloud;policy,Medium,ABR 이중화 확인
 [W3] ISP-1 내부 eBGP 4세션,Task,cloud,High,"PE-A/P1/P2/PE-B, AS65111-65114"
 [W3] ISP-2 내부 eBGP 4세션,Task,cloud,High,"PE-A/P1/P2/PE-B, AS65121-65124"

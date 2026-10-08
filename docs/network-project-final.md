@@ -71,7 +71,7 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 | BR1 | (GNS3에 없음) | H1 / H2 | 호스트 | 노드 생성 필요 |
 | BR2 | BR2-R1 / BR2-R2 | R1 / R2 | 라우터(R2가 DMVPN Spoke) | |
 | BR2 | BR2-SW1-L3 / BR2-SW2-L3 | SW1 / SW2 | L3 스위치 | 확인 필요 |
-| BR2 | BR2-SW1-L2 | SW3 | 호스트 연결 L2 스위치 | 확인 필요 |
+| BR2 | BR2-SW3-L2 | SW3 | 호스트 연결 L2 스위치 | GNS3 장비명 변경 필요(현재 BR2-SW1-L2) |
 | BR2 | (GNS3에 없음) | H1 / H2 | 호스트 | 노드 생성 필요 |
 
 ## 4. 인터페이스 · 포트 매핑 (제안값 — 실제 케이블링과 대조 필요)
