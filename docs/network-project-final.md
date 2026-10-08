@@ -168,16 +168,16 @@ DC ←── DMVPN Phase3(mGRE over IPsec, Private Internet 경유) ──→ BR
 - DC VLAN50(DNS1): 각 사이트 → UDP/TCP 53만 허용, 그 외 차단 (DHCP 허용 포트는 DHCP 설계 확정 후 추가)
 - DC VLAN50(DB1): DB 종류 확정 후 허용 포트 추가 (그 전까지 사이트 → DB1 차단 유지)
 
-## 6. 빌드 순서 (6주, 2인 체제 확정)
+## 6. 빌드 순서 (3.5주, 2인 체제 확정)
+
+기간: 2026-10-12(월) ~ 2026-11-04(수, 반일). 일별 목표는 `docs/schedule-2person.md` 참고.
 
 | 주차 | 내용 |
 |---|---|
-| W1 | AS/IP/VLAN 확정, GNS3 환경 세팅, 이미지별 RAM 실측(cEOS 포함), 노드 배치 |
-| W2 | 사이트 내부 L2/L3 (VLAN, 트렁크, EtherChannel, HSRP/VARP, 사이트 내부 OSPF) |
-| W3 | 사이트↔ISP 정적경로+재분배, ISP 내부 eBGP 풀메시, PI ACL |
-| W4 | DMVPN(mGRE over IPsec), DNS 서비스, QoS 정책, 접근통제 ACL |
-| W5 | 이중화 장애 실측(FHRP, EtherChannel, ISP 장애, DMVPN Hub 장애), 트러블슈팅 로그 |
-| W6 | PPT 제작, 리허설 |
+| 1주 | AS/IP/VLAN 확정, GNS3 환경 세팅, 이미지별 RAM 실측(cEOS 포함), 노드 배치, 사이트 내부 L2/L3(VLAN, 트렁크, EtherChannel, HSRP/VARP, 사이트 내부 OSPF) |
+| 2주 | 사이트↔ISP 정적경로+재분배, ISP 내부 eBGP 풀메시, PI ACL, DMVPN(mGRE over IPsec), DNS·DB 서버 |
+| 3주 | QoS 정책, 접근통제 ACL, 통합 테스트, 이중화 장애 실측(FHRP, EtherChannel, ISP 장애, DMVPN Hub 장애), 트러블슈팅 로그 |
+| 3.5주 | PPT 제작, 리허설 |
 
 ## 7. 미확정 항목
 - HQ의 DMVPN 스포크 편입 여부 (편입 시 Area 번호 재조정 필요)

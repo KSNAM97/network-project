@@ -16,7 +16,7 @@
 | 장비 구성 | HQ (HQ-R1·HQ-R2, HQ-SW-1 ~ HQ-SW-3), DC (DC-R1 ~ DC-R4, DC-SW1 ~ DC-SW4-L3, DC-SW1·2-L2, DNS1, DB1), BR1 (BR1-R1·R2, BR1-SW1 ~ SW3-L3), BR2 (BR2-R1·R2, BR2-SW1·SW2-L3, BR2-SW3-L2), 호스트 H1·H2, ISP-1·ISP-2 (ISP-n-PE-A·P1·P2·PE-B 각 4대), Private Internet (PrivI-net) |
 | 핵심 기술 | 사이트 OSPF, ISP eBGP(라우터별 개별 AS), 정적 경로 + 재분배(IP SLA/track), DMVPN Phase3, IPsec, HSRP / VARP, EtherChannel, QoS, ACL 화이트리스트 |
 | 시뮬레이터 | GNS3 (Cisco 7200 / IOU, Arista cEOS) |
-| 일정 | 6주, 2인 체제 확정 (Net-Cloud 남기석 / Policy 남인탁). 3인 체제 일정 문서는 참고용으로 보관 |
+| 일정 | 3.5주(2026-10-12 ~ 11-04), 2인 체제 확정 (Net-Cloud 남기석 / Policy 남인탁). 3인 체제 일정 문서는 참고용으로 보관 |
 | 검증 | 이중화 장애 실측 (FHRP, EtherChannel, ISP 장애, DMVPN Hub 장애), 트러블슈팅 로그 |
 
 ---
@@ -82,12 +82,10 @@ network-project/
 
 | 주차 | 단계 | 핵심 내용 |
 | --- | --- | --- |
-| **W1** | 설계 확정, 환경 세팅 | AS / IP / VLAN 확정, GNS3 환경, 이미지별 RAM 실측(cEOS 포함), 노드 배치 |
-| **W2** | 사이트 내부 L2 / L3 | VLAN, 트렁크, EtherChannel, HSRP / VARP, 사이트 내부 OSPF |
-| **W3** | 사이트 ↔ ISP | 정적 경로 + 재분배(track), ISP 내부 eBGP 풀메시, Private Internet ACL |
-| **W4** | DMVPN, 서비스, 정책 | DMVPN(mGRE over IPsec), DNS 서비스, QoS 정책, 접근통제 ACL |
-| **W5** | 이중화 장애 실측 | FHRP, EtherChannel, ISP 장애, DMVPN Hub 장애, 트러블슈팅 로그 |
-| **W6** | 정리 | PPT 제작, 리허설 |
+| **1주** | 설계 확정, 환경 세팅, 사이트 내부 | AS / IP / VLAN 확정, GNS3 환경, RAM 실측, 노드 배치, VLAN / 트렁크 / EtherChannel / HSRP / VARP, 사이트 내부 OSPF |
+| **2주** | 사이트 ↔ ISP, DMVPN | 정적 경로 + 재분배(track), ISP 내부 eBGP, Private Internet ACL, DMVPN(mGRE over IPsec), DNS·DB |
+| **3주** | 정책, 이중화 실측 | QoS 정책, 접근통제 ACL, 통합 테스트, FHRP / EtherChannel / ISP 장애 / DMVPN Hub 장애 실측, 트러블슈팅 로그 |
+| **3.5주** | 정리 | PPT 제작, 리허설 |
 
 > 역할 분담과 일별 목표 → [`docs/schedule-2person.md`](./docs/schedule-2person.md) (확정), [`docs/schedule-3person.md`](./docs/schedule-3person.md) (참고용)  
 > 전체 설계 → [`docs/network-project-final.md`](./docs/network-project-final.md)
